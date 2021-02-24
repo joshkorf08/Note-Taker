@@ -4,7 +4,9 @@ const express = require('express');
 const notes = require('./notes.js');
 const path = require('path');
 
+const db = require("../Develop/db/db.json");
 const app = express();
+
 var PORT = process.env.PORT || 8080;
 
 
@@ -25,7 +27,7 @@ app.post("/api/notes", (req, res) => {
 app.delete("/api/notes/:id", (req, res) => {
     notes.deleteNotes(req.params.id).then(() => res.json({ ok:true }));
 });
-app.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "../public/assets/notes.html")));
-app.get("*", (req, res) => res.sendFile(path.join(__dirname, "../public/assets/index.html")));
+app.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "../public/notes.html")));
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "../public/index.html")));
 
 app.listen(PORT, () => console.log(`We are live on port ${PORT}`));
