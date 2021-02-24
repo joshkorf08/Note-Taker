@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 app.get("/api/notes", (req, res) => {
     notes.getNotes().then(data => {
-        return res.json(data);
+    return res.json(data);
     });
 });
 app.post("/api/notes", (req, res) => {
