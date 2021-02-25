@@ -1,6 +1,5 @@
 const fs = require('fs');
 const util = require('util');
-//var uniqid = require('uniqid')
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 class Notes {
@@ -26,7 +25,7 @@ class Notes {
         if (!title || !text) {
             throw new Error('Must type a title and text.');
         }
-        const finalNote = { title, text, id: uniqid() }
+        const finalNote = { title, text, id, }
         return this.getNotes().then(data => [...data, finalNote]).then(data => this.writeNotes(data));
     };
     deleteNotes(id) {

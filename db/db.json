@@ -1,11 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    },
-
-    {
-        "title":"this is a homework reminder",
-        "text":"do your homework"
-    }
-]
+[{"title":"Test Title","text":"Test text"},{"title":"this is a homework reminder","text":"do your homework"}]
